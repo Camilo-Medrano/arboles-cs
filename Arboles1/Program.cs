@@ -6,6 +6,7 @@ namespace Arboles1
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Hello world");
             BinarySearchTree nums = new BinarySearchTree();
             nums.Insert(23);
             nums.Insert(45);
