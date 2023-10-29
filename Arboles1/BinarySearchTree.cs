@@ -4,11 +4,18 @@ namespace Arboles1
     {
         public Node root;
 
+        /// <summary>
+        /// Conctructor of the class BinarySearchTree
+        /// </summary>
         public BinarySearchTree()
         {
             root = null;
         }
 
+        /// <summary>
+        /// Method that adds to the tree
+        /// </summary>
+        /// <param name="i">Integer to input</param>
         public void Insert(int i)
         {
             Node newNode = new Node();
@@ -44,6 +51,10 @@ namespace Arboles1
             }
         }
         
+        /// <summary>
+        /// InOrder
+        /// </summary>
+        /// <param name="theRoot"></param>
         public void InOrder(Node theRoot) {
             if (theRoot != null) {
                 InOrder(theRoot.Left);
