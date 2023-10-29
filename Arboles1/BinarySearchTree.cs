@@ -43,5 +43,13 @@ namespace Arboles1
                 }
             }
         }
+        
+        public void InOrder(Node theRoot) {
+            if (theRoot != null) {
+                InOrder(theRoot.Left);
+                theRoot.DisplayNode();
+                InOrder(theRoot.Right);
+            }
+        }
     }
 }
