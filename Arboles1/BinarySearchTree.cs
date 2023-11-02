@@ -89,5 +89,45 @@ namespace Arboles1
                 theRoot.DisplayNode();
             }
         }
+        
+        /// <summary>
+        /// Finds the Minimum
+        /// </summary>
+        /// <returns></returns>
+        public int FindMin() {
+            Node current = root; 
+            while (!(current.Left == null)) 
+                current = current.Left; 
+            return current.Data;
+        }
+        
+        /// <summary>
+        /// Finds the maximum
+        /// </summary>
+        /// <returns></returns>
+        public int FindMax() {
+            Node current = root;
+            while (!(current.Right == null))
+                current = current.Right;
+            return current.Data;
+        }
+        
+        /// <summary>
+        /// Finds a node inside the BST
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public Node Find(int key) {
+            Node current = root;
+            while (current.Data != key) {
+                if (key < current.Data)
+                    current = current.Left;
+                else
+                    current = current.Right;
+                if (current == null)
+                    return null;
+            }
+            return current;
+        }
     }
 }
