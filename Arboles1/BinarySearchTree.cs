@@ -37,14 +37,15 @@ namespace Arboles1
                             parent.Left = newNode;
                             break;
                         }
-                        else
+                        
+                    }
+                    else 
+                    {
+                        current = current.Right; 
+                        if (current == null) 
                         {
-                            current = current.Right;
-                            if (current == null)
-                            {
-                                parent.Right = newNode;
-                                break;
-                            }
+                            parent.Right = newNode; 
+                            break;
                         }
                     }
                 }
@@ -55,11 +56,37 @@ namespace Arboles1
         /// InOrder
         /// </summary>
         /// <param name="theRoot"></param>
-        public void InOrder(Node theRoot) {
-            if (theRoot != null) {
+        public void InOrder(Node theRoot) 
+        {
+            if (theRoot != null) 
+            {
                 InOrder(theRoot.Left);
                 theRoot.DisplayNode();
                 InOrder(theRoot.Right);
+            }
+        }
+        
+        /// <summary>
+        /// PreOrder
+        /// </summary>
+        /// <param name="theRoot"></param>
+        public void PreOrder(Node theRoot) {
+            if (!(theRoot == null)) {
+                theRoot.DisplayNode();
+                PreOrder(theRoot.Left);
+                PreOrder(theRoot.Right);
+            }
+        }
+        
+        /// <summary>
+        /// PostOrder
+        /// </summary>
+        /// <param name="theRoot"></param>
+        public void PostOrder(Node theRoot) {
+            if (!(theRoot == null)) {
+                PostOrder(theRoot.Left);
+                PostOrder(theRoot.Right);
+                theRoot.DisplayNode();
             }
         }
     }

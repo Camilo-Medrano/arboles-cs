@@ -6,7 +6,6 @@ namespace Arboles1
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello world");
             BinarySearchTree nums = new BinarySearchTree();
             nums.Insert(23);
             nums.Insert(45);
@@ -15,8 +14,12 @@ namespace Arboles1
             nums.Insert(3);
             nums.Insert(99);
             nums.Insert(22);
-            Console.WriteLine("Inorder traversal: ");
+            Console.WriteLine("InOrder traversal: ");
             nums.InOrder(nums.root);
+            Console.WriteLine("\nPreOrder traversal: ");
+            nums.PreOrder(nums.root);
+            Console.WriteLine("\nPostOrder traversal: ");
+            nums.PostOrder(nums.root);
         }
     }
 }
